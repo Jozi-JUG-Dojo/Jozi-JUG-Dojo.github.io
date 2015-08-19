@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Hello SyntaxHighlighter</title>
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+	<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css"/>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+
+<body style="background: red; font-family: Helvetica">
+
+<h1>White belt kata 1</h1>
+
+<h2>Welcome to the first Jozi JUG white belt kata.</h2>
+
+<h3>
+<br>
+In this kata we will compile and run a simple program that<br>
+1) Prints out the current time<br>
+2) Adds 10 minutes to the current time<br>
+3) Demonstrates the concept of immutabliliy in Java<br>
+4) Prints the time</h3>
+<br>
+<h3>Desired outcome : Don't worry to much about the content of the program. The goal is to successfully compile and run this program</h3>
+
+<h3>What you will need :<br>
+A computer<br>
+VirtualBox<br>
+The Jozi JUG Dojo White Belt virtual machine<br>
+
+
+ <pre class='brush: java;'>
+package za.co.jozijugdojo.whitebelt1.hellojava8;
+
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+
+public class App {
+
+    public static void main(String[] args) {
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println("It is now :"+now);
+        
+        LocalDateTime tenMinutesFromNow = now.plus(10, ChronoUnit.MINUTES);
+        
+        System.out.println("Now did not change, it is immutable (will never change) :"+now);        
+        System.out.println("Ten minutes from now is "+tenMinutesFromNow);
+    }
+}
+</pre>
+
+
+
+
+
+
+
+
+</html>

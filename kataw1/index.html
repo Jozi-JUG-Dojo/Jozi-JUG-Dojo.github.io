@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script type="text/javascript" src="js/vendor/SyntaxHighlighter/scripts/shCore.js"></script>
+        <script type="text/javascript" src="js/vendor/SyntaxHighlighter/scripts/shBrushJava.js"></script>
+        <link type="text/css" rel="stylesheet" href="js/vendor/SyntaxHighlighter/styles/shCoreDefault.css"/>
+        <script type="text/javascript">SyntaxHighlighter.all();</script>
+        
+        
+        <!--link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"-->
+        <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+        <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+        <script src="js/bootstrap-image-gallery.min.js"></script>
+        
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+      <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left prev">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-primary next">
+                        Next
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+        
+        
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Jozi JUG Dojo - White belt kata 1</a>
+        </div>
+ 
+      </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Welcome to the first white belt kata!</h1>
+        <p>In this kata we will compile and run a simple program that<br>
+1) Prints out the current time<br>
+2) Adds 10 minutes to the current time<br>
+3) Demonstrates the concept of immutabliliy in Java<br>
+4) Prints the time then minutes after the current time</p>
+        
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Desired outcome</h2>
+          <p>Don't worry to much about the content of the program. The goal is to successfully compile and run this program on the supplied virtual machine.</p>
+        </div>
+        <div class="col-md-4">
+          <h2>What you will need</h2>
+          <p>A computer, VirtualBox Open Source edition , The Jozi JUG Dojo White Belt virtual machine. Please join the <a href="https://groups.google.com/forum/?hl=en#!forum/jozijugdojo">Kata Forums</a> and join the community
+</p>
+       </div>
+      </div>
+      
+      <h3>The code that you will compile and run. Don't worry to much about the code as we will cover that in the next kata.</h3>
+ <pre class='brush: java;'>
+package za.co.jozijugdojo.whitebelt1.hellojava8;
+
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+
+public class App {
+
+    public static void main(String[] args) {
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println("It is now :"+now);
+        
+        LocalDateTime tenMinutesFromNow = now.plus(10, ChronoUnit.MINUTES);
+        
+        System.out.println("Now did not change, it is immutable (will never change) :"+now);        
+        System.out.println("Ten minutes from now is "+tenMinutesFromNow);
+    }
+}
+</pre>
+      
+      <h3>Download and install <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">Virtual Box Open Source edition</a></h3> 
+      <h3>Download <a href="http://www.jozijugdojo.co.za/JoziJUGDojo_1.1.ova" >The Jozi JUG Dojo White Belt virtual machine</a></h3>
+      <h3>Open an run the Jozi JUG Dojo White Belt virtual machine from Virtual Box</h3>
+      <h3>Click on the image below and follow the instructions</h3> 
+<div id="links">
+    <a href="img/dojow1.jpg" title="1. Log into SliTaz with the user dojo" data-gallery>
+        <img src="img/dojow1.jpg" alt="Banana">
+    </a>
+    <a href="img/dojow2.jpg" title="2. Enter the password dojo (same as the user name)" data-gallery>
+        <!--img src="img/dojow2.jpg" alt="Apple"-->
+    </a>
+    <a href="img/dojow3.jpg" title="3. You will now see the desktop" data-gallery>
+        <!--img src="img/dojow3.jpg" alt="Orange"-->
+    </a>
+    <a href="img/dojow4.jpg" title="4. Click on the top left icon that looks like a X" data-gallery>
+        <!--img src="img/dojow3.jpg" alt="Orange"-->
+    </a>
+    <a href="img/dojow5.jpg" title="5. You will now see a terminal" data-gallery>
+        <!--img src="img/dojow3.jpg" alt="Orange"-->
+    </a>
+    <a href="img/dojow6.jpg" title="6. change directory into src and then whitebelt1 as shown" data-gallery>
+        <!--img src="img/dojow3.jpg" alt="Orange"-->
+    </a>
+    <a href="img/dojow7.jpg" title="7. To see what is inside the file you will compile, cat the file as show" data-gallery>
+        <!--img src="img/dojow3.jpg" alt="Orange"-->
+    </a>
+    <a href="img/dojow8.jpg" title="8. This is the output of the cat command" data-gallery>
+        <!--img src="img/dojow3.jpg" alt="Orange"-->
+    </a>
+    <a href="img/dojow9.jpg" title="9. The file needs to be compiled, so compile as shown" data-gallery>
+        <!--img src="img/dojow3.jpg" alt="Orange"-->
+    </a>
+    <a href="img/dojow10.jpg" title="10. Finally run the file, and send a screenshot to kata@jozijugdojo.co.za" data-gallery>
+        <!--img src="img/dojow3.jpg" alt="Orange"-->
+    </a>
+    <a href="img/dojow3.jpg" title="11. To shut down your virtual machine , click the power button on the top right" data-gallery>
+        <!--img src="img/dojow3.jpg" alt="Orange"-->
+    </a>
+
+
+
+</div>
+      <hr>
+
+      <footer>
+        <p><a href="http://www.jozijugdojo.co.za/">Return to the main Jozi JUG Dojo website</a></p>
+      </footer>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!--script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script-->
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://jozijugdojo.co.za/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://jozijugdojo.co.za/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+    </body>
+</html>
